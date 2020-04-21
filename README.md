@@ -1,2 +1,2 @@
 # pycon2020
-Poster development
+Poster development for the pycon 2020 conference. 
