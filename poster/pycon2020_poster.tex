@@ -74,7 +74,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \title[]{Text mining in Python for Evaluating the Ethical Foundations in Computer Science}
 \author[Bonham-Carter]{Enpu You, Oliver Bonham-Carter, Janyl Jumadinova}
-\institute{Depts of Computer Science, Allegheny College \\ Meadville, PA}
+\institute{Dept of Computer Science, Allegheny College \\ Meadville, PA}
 \webpage{https://csethics.allegheny.edu}
 \mail{\{youe2, obonhamcarter, jjumadinova\}@allegheny.edu}
 
@@ -82,7 +82,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
     \begin{frame}{}
-        \vspace*{2mm}
+        \vspace*{9mm} % was 2
         \begin{columns}[t]
         	\begin{column}{1\linewidth}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,24 +97,23 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 \begin{block}{\textsc{\textbf{Project Objectives}}}
-				\vspace*{3mm}
+				\vspace*{2.0mm}
 
-				\omitit{
-		\begin{wrapfigure}{r}{0.35\textwidth}
+		\begin{wrapfigure}{r}{0.25\textwidth}
 					\begin{figure}
 						\centering
-						\includegraphics[scale = 1.4]{graphics/chromosomes.png}
-                        \caption{\ref{fig:chromosomes}. \small A karyotype of cancer cells of relatively stable genome (Alberts, \emph{et al.}, Molecular Biology of the cell), right.}
-                        \label{fig:chromosomes}
+						\includegraphics[scale = .25]{graphics/MozillaLogo_BW.jpg}
+                        \caption{\ref{fig:MozillaLogo_BW}. \small \textbf{This project is supported by the Responsible Computer Science Challenge, funded by Omidyar Network, Mozilla, Schmidt Futures and Craig Newmark Philanthropies.}}
+                        \label{fig:MozillaLogo_BW}
 					\end{figure}
                         \end{wrapfigure} 
-		}
+
                         We present an automated text-mining tool written in Python to measure the technical responsibility of students in computer science courses.
 
 				\begin{itemize}
 					\item Our tool automatically collects reflection documents written by students from their GitHub repositories.
 					\item Then, using natural language processing analyzes them for ethical considerations based on pre-determined questions and criteria. 
-					\item Using our tool, it is possible to see the progression of a single student's ethical thinking throughout a specific course and throughout the entire computer science curriculum, as well as, to have a grand view of all students' progress in developing an understanding of social responsibility in computer science across all levels of our courses. 
+					\item The tool helps to track the progression of student ethical understanding and sense of social responsibility by analyzing writing samples across the computer science curriculum.
 
 				\end{itemize}
 
@@ -140,24 +139,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			\begin{block}{\textsc{\textbf{Teaching responsible computing}}}
 				\vspace*{3mm}
-%                  \begin{wrapfigure}{r}{0.5\textwidth}
-				\omitit{
-				\begin{figure}
-					\centering
-					\includegraphics[scale = 0.6]{graphics/braca.png}
-					\caption{\ref{fig:braca}. Co-Dependance by genes}
-					\label{fig:braca}
-%                  \end{wrapfigure}
-					\end{figure}
-				}
+
 Teaching responsible computing is critical in developing software that produces a positive impact on our society, economy, and individuals.
 				\begin{itemize}
-					\item  Each application course in computer science at Allegheny integrates ethical considerations in its pedagogy.
-					\item Broad learning categories include topics of internet health, ethics and responsible computing that are specific to each application course. 
-					\item The delivery of these concepts include readings and class discussions, class and lab assignments with heavy software development emphasis. 
-					\item Students  write reflection reports for these assignments that demonstrate their understanding of relevant issues,  ability to analyze and evaluate information, and their capacity for integrating the understanding and analysis of ethical thinking into their own work.
+					\item  Each application course in computer science at Allegheny College integrates ethical considerations in its pedagogy.
+					\item Broad learning categories include topics of internet health, ethics and responsible computing customized to each application course. 
+					\item The delivery of these concepts include readings,  discussions, class and lab assignments with heavy software development emphasis. 
+					\item As an output, students  write reflection reports to demonstrate their understanding of relevant issues,  ability to analyze information, and  capacity for integrating the understanding and analysis of ethical thinking into their own work.
 				\end{itemize}
-				\vspace*{3mm}
+				\vspace*{2mm}
 			\end{block}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -170,30 +160,24 @@ Teaching responsible computing is critical in developing software that produces 
 
 			\begin{block}{\textsc{\textbf{Text Mining Tool to Determine Ethical Pedagogy}}}
 			\begin{center}
-
- Random selection of ten data sets of breast cancer gene expression. 
+				\begin{center} \end{center} % drop a line
 				\begin{figure}
-					\includegraphics[scale = 0.60]{graphics/normFactor.png}
-					\caption{\ref{fig:normFactor}. Determining the normalizing factors}
-					\label{fig:normFactor}
-				\end{figure}
-				
-				\begin{center}\end{center} % separation space between both figures
-				
-				\begin{figure}
-					\includegraphics[scale = 0.60]{graphics/lm.png}
-					\caption{\ref{fig:lm}. HouseKeeping genes to normalize data sets}
-					\label{fig:lm}
+					\includegraphics[scale = 3.6]{graphics/flowchart.png}
+					\caption{\ref{fig:flowchart}.Simplified Flowchart of tool.}
+					\label{fig:flowchart}
 				\end{figure}
 			\end{center}
 
 				\begin{itemize}
-					\item  bla bla bla
-					\item  bla bla bla
-					\item  bla bla bla
+					\item  Our tool first obtains student reflection documents (as Markdown files) stored in AWS.
+					\item  Markdown parser goes through the Markdown files and constructs a dictionary.
+					\item  Natural language pre-processing is done with SpaCy with the output stored into a pandas data frame for further analysis.
+					\item Five categories of analysis are included that can be queried and customized. The result of each analysis is stored in a separate pandas data frame. 
 				\end{itemize}
 			\vspace*{3mm}
                 \end{block}
+
+
 	\end{column}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -208,97 +192,69 @@ Teaching responsible computing is critical in developing software that produces 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%			\begin{block}{\textsc{\textbf{Determining Normalization Factors}}}
-%
-%
-%			\begin{center}
-%				\begin{figure}
-%					\includegraphics[scale = 0.6]{graphics/normFactor.png}
-%					\caption{\ref{fig:normFactor}. Determining the normalizing factors}
-%					\label{fig:normFactor}
-%				\end{figure}
-%			\end{center}
-%			\begin{itemize}
-%					\item bla bla
-%					\item bla bla
-%			\end{itemize}
-%			\end{block}
 
+%		\begin{block}{\textsc{\textbf{Features: Word Frequency Analysis}}}
 		\begin{block}{\textsc{\textbf{Features}}}
 			\vspace*{3mm}
+
 			\begin{figure}
 				\begin{tabular}{cc}
 					\hspace*{5mm}
-
-					\includegraphics[scale = 0.28]{graphics/R_geneExpression_A.png}
-					\textbf{A.}
-					&                     
-					\includegraphics[scale = 0.28]{graphics/R_geneExpression_B.png}
-					\textbf{B.}\\
-
-					\includegraphics[scale = 0.28]{graphics/R_geneExpression_avgABC.png}
-					\textbf{C.}
-					&                      
-					\includegraphics[scale = 0.32]{graphics/R_geneExpression_AVGG1.png}
-					\textbf{D.}\\
-
-					\includegraphics[scale = 0.28]{graphics/R_geneExpression_AVGG2.png}
-					\textbf{E.}
-					&                      
-					\includegraphics[scale = 0.28]{graphics/R_geneExpression_AVGG3.png}
-					\textbf{F.}\\
+					\includegraphics[scale = 1.1]{graphics/interface.png}
 				\end{tabular}				
-				\caption{\ref{tab:ge}. Heatmaps of R$^{2}$ values, derived from normalizing factors}
-				\label{tab:ge}
+				\caption{\ref{fig:interface} \textbf{Visual Interface}}
+				\label{fig:interface}
 			\end{figure}
-			\begin{itemize}
-				\item  bla bla bla
-				\item  bla bla bla
-				\item  bla bla bla
-			\end{itemize}
+
+				\begin{itemize}
+					\item  Our tool can be run through a command-line  or a graphical interface.
+					\item  Visualization was developed using Altair, with the generated graphs displayed using Streamlit.
+				\end{itemize}
+
+
 			\vspace*{3mm}
 		\end{block}
+
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %
                 % Sensors
                 %
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\begin{block}{\textsc{\textbf{Results}}}
+		\begin{block}{\textsc{\textbf{Sample Results}}}
 			\vspace*{3mm}
 			
-%			\begin{wrapfigure}{l}{0.47\textwidth}
-%				\centering
-%				\includegraphics[width=0.35\textwidth]{assets/sensors.jpg}
-%				\caption{Arduino board and sensors}
-%			\end{wrapfigure}
-			
-			\begin{itemize}
-				\item  bla bla bla
-				\item  bla bla bla
-				\item  bla bla bla				
-			\end{itemize}
+			\begin{figure}
+				\begin{tabular}{cc}
+					\hspace*{5mm}
+					\includegraphics[scale = 1.5]{graphics/freqWords.png}
+				\end{tabular}				
+				\caption{\ref{fig:freqWords} \textbf{Word Frequency Analysis}}
+				\label{fig:freqWords}
+			\end{figure}
+%			\begin{itemize}
+%				\item  bla bla bla
+%				\item  bla bla bla
+%				\item  bla bla bla
+%			\end{itemize}
 			\vspace*{3mm}
+
+
+%		\begin{block}{\textsc{\textbf{Features: Document Similarity}}}
+			\vspace*{3mm}
+			\begin{figure}
+				\begin{tabular}{cc}
+					\hspace*{5mm}
+
+					\includegraphics[scale = 1.2]{graphics/docSim.png}
+				\end{tabular}				
+				\caption{\ref{fig:docSim} \textbf{Document Similarity}}
+				\label{fig:docSim}
+			\end{figure}
+			\vspace*{3mm}
+	
+%\textbf{This project is supported by the Responsible Computer Science Challenge, funded by Omidyar Network, Mozilla, Schmidt Futures and Craig Newmark Philanthropies.}
 	\end{block}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Results
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{block}{\textsc{\textbf{Conclusions}}}
-		\vspace*{3mm}
-
-		\begin{itemize}
-			\item  bla bla bla
-			\item  bla bla bla
-			\item  bla bla bla
-		\end{itemize}
-%		\begin{figure}
-%			\includegraphics[scale = 2.5]{}
-%			\caption{}
-%			\end{figure}
-		\vspace*{3mm}
-	\end{block}
 	\end{column}
 
 
